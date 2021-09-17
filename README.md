@@ -4,7 +4,10 @@
 
 Nodejs application that let's you add and complete task on a single page, storing both new and completed task in a different array.This appllication makes use of:
 
-<ul><li>EJS - A simple templating engine that lets you generate HTML markup with plain JS</li></ul>
+<ul>
+ <li>EJS - A simple templating engine that lets you generate HTML markup with plain JS</li>
+ <li>Mongoose - Mongoose provides a straight-forward, schema-based solution to model your application data</li>
+</ul>
  
 <p>How to use the todo-list :<p>
 
