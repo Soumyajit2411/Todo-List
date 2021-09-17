@@ -1,6 +1,15 @@
 # Todo-List
 
 <h2> A simple To Do List application built with Node.js and Express</h2>
+ 
+<p>How to use the todo-list :<p>
+
+<ol>
+  <li>Visit to the link : https://to-do-list-nodejs-api-backend.herokuapp.com/ </li>
+  <li>You can use the Today Todo-s List .</li>
+  <li>Or you can make a custom list : [site_url/list_name].</li>
+  <li>Note :- don't use spaces in the list_name .</li>
+</ol>
 
 <p> How to run the app locally: </p>
 
