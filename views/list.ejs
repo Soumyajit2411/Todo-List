@@ -1,0 +1,35 @@
+<%- include('header'); -%>
+    <div class="icon">
+        <img src="images/todo.png" 
+        class="logo"
+        height="100px" 
+        width="100px"
+        alt="logo">
+    </div>
+    <div class="boxes" id="heading">
+        <h1><%= listtitle %> Todo-s</h1>
+    </div>
+    <div class="box" >
+        <form class="item" action="/" method="POST">
+            <input type="text" name="newitem"placeholder="New Item" autocomplete="off" />
+            <button class="add" type="submit" name="list"value=<%= listtitle %>>Add</button>
+        </form>
+
+        <%newlistitem.forEach(function(item){%>
+            <form  action="/delete"method="POST">
+                <div class="item">
+                    <input type="checkbox" name="checkbox">
+                    <p><%= item.name %></p>
+                    <button  
+                    class="delete"
+                    name="delete"
+                    value=<%= item._id  %>
+                    onchange="this.form.submit()">
+                    <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <input type="hidden" name="listname"value="<%= listtitle  %>"></input>
+            </form>
+        <%})%>
+    </div> 
+<%- include('footer'); -%>
