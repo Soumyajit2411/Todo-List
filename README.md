@@ -2,7 +2,9 @@
 
 <h2> A simple To Do List application built with Node.js and Express</h2>
 
-Nodejs application that let's you add and complete task on a single page, storing both new and completed task in a different array
+Nodejs application that let's you add and complete task on a single page, storing both new and completed task in a different array.This appllication makes use of:
+
+<ul><li>EJS - A simple templating engine that lets you generate HTML markup with plain JS</li></ul>
  
 <p>How to use the todo-list :<p>
 
