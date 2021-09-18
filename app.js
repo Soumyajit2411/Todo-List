@@ -84,7 +84,7 @@ app.post("/", (req, res) => {
   }
 });
 
-app.post("/delete", (req, res) => {
+app.post("/delete1", (req, res) => {
   if (req.body.listname === "Today") {
     Item.findByIdAndRemove(req.body.delete, function (error, docs) {
       if (!error) {
@@ -96,6 +96,27 @@ app.post("/delete", (req, res) => {
     List.findOneAndUpdate(
       { name: req.body.listname },
       { $pull: { items: { _id: req.body.delete } } },
+      function (error, docs) {
+        if (!error) {
+          res.redirect("/" + req.body.listname);
+        }
+      }
+    );
+  }
+});
+
+app.post("/delete", (req, res) => {
+  if (req.body.listname === "Today") {
+    Item.findByIdAndRemove(req.body.checkbox, function (error, docs) {
+      if (!error) {
+        console.log("Successfully deleted!");
+        res.redirect("/");
+      }
+    });
+  } else {
+    List.findOneAndUpdate(
+      { name: req.body.listname },
+      { $pull: { items: { _id: req.body.checkbox } } },
       function (error, docs) {
         if (!error) {
           res.redirect("/" + req.body.listname);

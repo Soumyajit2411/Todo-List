@@ -1,35 +1,48 @@
-<%- include('header'); -%>
-    <div class="icon">
-        <img src="images/todo.png" 
+<%- include('partials/header'); -%>
+  <body>
+    <header class="bg-transparent">
+      <img
+        src="images/todo.png"
         class="logo"
-        height="100px" 
+        height="100px"
         width="100px"
-        alt="logo">
-    </div>
-    <div class="boxes" id="heading">
-        <h1><%= listtitle %> Todo-s</h1>
-    </div>
-    <div class="box" >
-        <form class="item" action="/" method="POST">
-            <input type="text" name="newitem"placeholder="New Item" autocomplete="off" />
-            <button class="add" type="submit" name="list"value=<%= listtitle %>>Add</button>
+        alt="logo"
+      />
+    </header>
+    <section class="py-2">
+      <h1 class="text-center"><%= listtitle %> Todo-s</h1>
+      <div class="box">
+        <form class="item" action="/" method="post">
+          <input
+            type="text"
+            name="newitem"
+            class="form-control"
+            placeholder="New Item"
+            autocomplete="off"
+          />
+          <button type="submit" class="btn btn-outline-danger" name="list" value=<%= listtitle %>>
+            Add
+          </button>
         </form>
-
         <%newlistitem.forEach(function(item){%>
-            <form  action="/delete"method="POST">
-                <div class="item">
-                    <input type="checkbox" name="checkbox">
-                    <p><%= item.name %></p>
-                    <button  
-                    class="delete"
-                    name="delete"
-                    value=<%= item._id  %>
-                    onchange="this.form.submit()">
-                    <i class="fas fa-trash"></i>
-                    </button>
-                </div>
-                <input type="hidden" name="listname"value="<%= listtitle  %>"></input>
-            </form>
+        <form action="/delete" method="POST">
+          <div class="item container-fluid">
+            <input type="checkbox" name="checkbox" />
+            <p><%= item.name %></p>
+              <button
+                class="delete"
+                name="delete"
+                value=<%= item._id  %>
+                onchange="this.form.submit()"
+                formaction="/delete1"
+              >
+                <i class="fas fa-trash"></i>
+              </button>
+          </div>
+          <input type="hidden" name="listname"value="<%= listtitle  %>"></input>
+        </form>
         <%})%>
-    </div> 
-<%- include('footer'); -%>
+      </div>
+    </section>
+
+<%- include('partials/footer'); -%>

@@ -1,29 +1,24 @@
-html {
+html,
+body {
   background-color: #222831;
   font-family: "helvetica neue";
 }
 
 h1 {
   color: #fff;
-  padding: 10px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
 .logo {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0px auto;
 }
 
 .box {
-  max-width: 450px;
+  max-width: 400px;
   margin: 10px auto;
   border-radius: 5px;
-}
-
-#heading {
-  text-align: center;
 }
 
 .item {
@@ -81,20 +76,21 @@ form.item {
 }
 
 input[type="text"] {
-  text-align: center;
-  height: 40px;
+  height: 37px;
   top: 10px;
   border: none;
   background: white;
   font-size: 20px;
   font-weight: 200;
-  width: 313px;
-  margin-right: 5px;
+  width: 300px;
+  margin-right: 10px;
 }
 
-input[type="text"]:focus {
-  outline: none;
-  box-shadow: inset -3px -3px -3px -3px #00adb5;
+.form-control:focus {
+  border-color: rgba(100, 100, 100, 1) !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 ::placeholder {
